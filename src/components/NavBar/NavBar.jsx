@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import style from './NavBar.module.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function NavBar({ log, setLog }){
-
+    
+    const navigate = useNavigate()
     const {navbar, buttonContain, buttonNav } = style
     // const [ log , setLog ] = useState(false)
     // setLog(true)
@@ -23,8 +25,8 @@ export default function NavBar({ log, setLog }){
                     :
                     (
                         <>
-                            <button className={buttonNav} onClick={() => {setLog(!log)}} >Registrarse</button>
-                            <button className={buttonNav} >Iniciar sesion</button>
+                            <button className={buttonNav} onClick={() => {navigate('/register')}} >Registrarse</button>
+                            <button className={buttonNav} onClick={() => {navigate('/login')}} >Iniciar sesion</button>
                         </>
 
                     )

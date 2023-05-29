@@ -31,7 +31,7 @@ function App() {
           <Carrousel></Carrousel>
           
         </div>
-        <button>Todos los cursos</button>
+        <button className='allCourses' >Todos los cursos</button>
         <br></br>
         <br></br>
         <br></br>

@@ -1,0 +1,17 @@
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #4ab2ff;
+    flex-direction: column;
+    gap: 50px;
+    border-radius: 5px;
+    width: 50%;
+    height: 400px;
+}
+.contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
