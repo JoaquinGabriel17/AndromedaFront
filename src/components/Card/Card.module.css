@@ -1,0 +1,35 @@
+.card{
+    background-color: #4ab2ff;
+    /* color: #2e475d; */
+    height: 270px;
+    cursor: pointer;
+    width: 220px;
+    border-radius: 5px;
+    position:relative;
+    margin: 0px;
+    text-align: center;
+    transition: .7s;
+    
+}
+
+.card:hover{
+    transition: .7s;
+    height: 320px;
+    position: float;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+.showDescription{
+    display: none;
+}
+
+.card:hover .showDescription{
+    display: block;
+}
+
+.cardImage{
+    height: 140px;
+    width: 220px;
+}

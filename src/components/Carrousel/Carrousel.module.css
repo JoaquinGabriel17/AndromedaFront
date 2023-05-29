@@ -1,0 +1,28 @@
+.carrousel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px 0;
+
+    gap: 20px;
+}
+.carButton{
+    margin: 0;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40px;
+    background-color: #4ab2ff;
+}
+.carButtonDis{
+    cursor:auto;
+    margin: 0;
+    height: 40px;
+    width: 40px;
+    background-color: gray;
+}
+.carButtonDis:hover{
+    background-color: gray;
+    /* color: ; */
+}
