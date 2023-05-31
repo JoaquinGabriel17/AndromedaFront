@@ -4,11 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import Carrousel from './components/Carrousel/Carrousel'
+import { useNavigate } from 'react-router-dom'
+import Comentarios from './components/ComentsBox/Comentarios'
 
 
 function App() {
   // const [count, setCount] = useState(0)
   const [ log, setLog ] = useState(false)
+  const navigate = useNavigate()
 
   
   
@@ -17,7 +20,7 @@ function App() {
       <NavBar log={log} setLog={setLog} ></NavBar>
       <div className='principal' >
         {
-          log ?
+          localStorage.getItem("token") === false ?
           (
             <>
             <h1>Registrate y accede a mas de 1000 cursos gratuitos</h1>
@@ -31,22 +34,11 @@ function App() {
           <Carrousel></Carrousel>
           
         </div>
-        <button className='allCourses' >Todos los cursos</button>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        
-        
+        <button className='allCourses' onClick={() => navigate('/cursos')} >Todos los cursos</button>   
       </div>
+      <div className='divisor' >
+      </div>
+      <Comentarios></Comentarios>
     </div>
   )
 }

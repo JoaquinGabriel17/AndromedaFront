@@ -34,3 +34,54 @@
     display: flex;
     margin-right: 20px;
   }
+
+  .form {
+    /* margin: 30px 0; */
+    --width-of-input: 300px;
+    --border-height: 1px;
+    --border-before-color: black;
+    --border-after-color: rgb(0, 140, 255);
+    --input-hovered-color: white;
+    position: relative;
+    /* background-color: wheat; */
+    width: var(--width-of-input);
+   }
+   /* styling of Input */
+   .input {
+    /* color: #fff; */
+    /* width: 400px;  */
+    font-size: 0.9rem;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+   }
+   /* styling of animated border */
+   .input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    border-bottom: 1px solid var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+   }
+   /* Hover on Input */
+   input:hover {
+    background-color: white  ;
+    background: white;
+    border-bottom: 1px solid rgb(0, 140, 255);
+    /* width: 1000px */
+   }
+   
+   /* input:focus {
+    outline: none;
+   } */
+   /* here is code of animated border */
+   /* input:focus ~ .input-border {
+    width: 100%;
+   } */

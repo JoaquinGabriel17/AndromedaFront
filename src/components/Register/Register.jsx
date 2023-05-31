@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom"
 import style from './Register.module.css'
 import { useState } from "react"
+import validate from "./validate"
 
 export default function Register(login){
 
-    const { register, contain } = style
+    const { register, contain, inputGroup, regButton, logButton, logContain, label, input } = style
     const [ form, setForm ] = useState({
         name: "",
         password: ""
@@ -14,17 +15,7 @@ export default function Register(login){
         password: ""
     })
 
-    function validate({name, password}){
-        setError({ name: "", password: ""})
-        if(name.length < 3 | name.length > 12) setError({
-            ...error,
-            name: "El nombre debe tener entre 3 y 12 caracteres"
-        }) 
-        if(password.length < 3 | password.length > 12) setError({
-            ...error,
-            password: "La contraseña debe tener entre 3 y 12 caracteres"
-        })
-    }
+    
     
     function formHandler(e) {
         
@@ -32,27 +23,44 @@ export default function Register(login){
             ...form,
             [e.target.name]: e.target.value
         })
-        validate(form)
+        setError(validate(form))
     }
 
-    function registerHandler(){
+    const registerHandler = async() => {
+        await setError(validate(form)) 
+        console.log(error)
+        if(form.name === "" | form.name === "") return alert('Debe completar todos los campos')
         if(error.name === "" && error.password === "") navigate('/')
+        else alert('Debe completar todos los campos')
     }
 
     const navigate = useNavigate()
 
     return(
         <div className={contain} >
+            
+            
         <div className={register} >
-            <button style={{float: "left"}} onClick={() => { navigate('/') }} >BACK</button>
-            <form>
-                <label>Nombre: <input type="text" name="name" value={form.name} onChange={formHandler} ></input></label>
-                { error.name ? <h4 style={{color: "red"}} >{error.name}</h4> : ""}
-                <br></br>
-                <label>Contraseña: <input type="password" name="password" value={form.password} onChange={formHandler} ></input></label>
-                { error.password ? <h5 style={{color: "red"}} >{error.password}</h5> : ""}
+            <div style={{ marginBottom: "440px", position: "absolute"  }} >
+        <h1>EduAndromeda</h1>
+            {/* <h1>Registrate gratis y disfruta de cursos online</h1> */}
+            <h3 className={logContain} >¿Tienes una cuenta? <a className={logButton} onClick={() => navigate('/login')} >Inicia sesión aquí</a> </h3>
+            </div>
+            <form  >
+              <div className={inputGroup}>
+    <label className={label}>Nombre</label>
+    <input  name="name" id="name" className={input} type="text" onChange={formHandler} />
+    { error.name ? <p style={{color: "red"}} >{error.name}</p> : ""}
+    <div></div></div>
+
+    <div className={inputGroup}>
+    <label className={label}>Contraseña</label>
+    <input  name="password" id="password" className={input} type="password" onChange={formHandler} />
+    { error.password ? <p style={{color: "red"}} >{error.password}</p> : ""}
+    <div></div></div>
+
             </form>
-            <button onClick={registerHandler} >Registrarse</button>
+            <button onClick={registerHandler} className={regButton} >Registrarse</button>
         </div>
         </div>
     )

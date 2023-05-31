@@ -1,0 +1,24 @@
+.contain{
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 80%; */
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+.principal{
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.back{
+    width: 150px;
+    height: 40px;
+    /* float: left; */
+    /* top: 0%; */
+    margin-right: 80%;
+    /* position:relative; */
+}

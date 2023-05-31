@@ -9,7 +9,7 @@ export default function Carrousel(){
 
     let cursos = [];
     
-    console.log(cursos)
+    // console.log(cursos)
 
     const {  carrousel, carButton, carButtonDis } = style
     const left = '<-', rigth = '->'
@@ -23,6 +23,7 @@ export default function Carrousel(){
         if(index + 5 < data.cursos.length) setIndex(index + 5)
     }
     cursos = data.cursos.slice(index, index + 5)
+    // console.log(cursos)
 
     return(
         <div className={carrousel}>
@@ -32,7 +33,7 @@ export default function Carrousel(){
                     return(
                         <>
                         
-                        <Card key={curso.name} name={curso.name} image={curso.image} description={curso.description} autor={curso.autor} ></Card>
+                        <Card key={curso.id} id={curso.id} name={curso.name} image={curso.image} description={curso.description} autor={curso.autor} ></Card>
                         
                         </>
                     )

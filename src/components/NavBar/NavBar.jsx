@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 export default function NavBar({ log, setLog }){
     
     const navigate = useNavigate()
-    const {navbar, buttonContain, buttonNav } = style
+    const {navbar, buttonContain, buttonNav, input, form, inputBorder } = style
     // const [ log , setLog ] = useState(false)
     // setLog(true)
 
@@ -14,12 +14,23 @@ export default function NavBar({ log, setLog }){
             <nav className={navbar}>
 
                 <h1>Andromeda</h1>
+
+                <div className={form}>
+                    <input className={input} placeholder="Busca algo..." required={false} type="text"></input>
+                    <span className={inputBorder}>
+                    </span>
+                </div>
+
                 <div className={buttonContain}>
-                    { log ?
+                    { localStorage.getItem("token") === "true" ?
                     (   <> 
                         <button className={buttonNav} >Sobre Andromeda</button>
-                        <button className={buttonNav} >Cursos</button>
-                        <button className={buttonNav} onClick={() => {setLog(!log)}} >Perfil</button>
+                        <button className={buttonNav} onClick={() => {
+                            localStorage.setItem("token", false)
+                            localStorage.setItem("user", "")
+                            navigate('/login')
+                            }} >Log out</button>
+                        <button className={buttonNav} onClick={() => {navigate('/perfil')}} >Perfil</button>
                         </>
                     )
                     :

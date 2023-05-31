@@ -1,13 +1,21 @@
 .login{
+    /* margin-top: 8%; */
+    margin-top: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 5px solid #4ab2ff;
+    text-align: center;
+    /* border: 5px solid #4ab2ff; */
     flex-direction: column;
-    gap: 50px;
+    gap: 10px;
+    box-shadow: #172830 0px 4px 20px;;
     border-radius: 5px;
-    width: 50%;
-    height: 400px;
+    width: 35%;
+    height: 100%;
+}
+.login h1{
+  margin-top: 0;
+  margin: 0;
 }
 .contain{
     display: flex;
@@ -15,3 +23,58 @@
     justify-content: center;
     height: 600px;
 }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 15px;
+    margin-top: 80px;
+  }
+
+    .input {
+        max-width: 190px;
+        height: 44px;
+        background-color: #05060f0a;
+        border-radius: .5rem;
+        padding: 0 1rem;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+      }
+      
+      .label {
+        display: block;
+        /* margin-bottom: .3rem; */
+        font-size: .9rem;
+        font-weight: bold;
+        color: #05060f99;
+        transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+      }
+      
+      .input:hover, .input:focus, .inputGroup:hover .input {
+        outline: none;
+        border-color: #05060f;
+      }
+      
+      .inputGroup:hover .label, .input:focus {
+        color: #05060fc2;
+      }
+   
+   
+
+  .logButton{
+    width: 150px;
+    height: 40px;
+  }
+  .logButton{
+    cursor: pointer;
+    color: #315cfd;
+  } 
+  .logButton:hover{
+    text-decoration: underline;
+  }
+ .logContain{
+    margin: 0;
+    font-size: 1em;
+  }

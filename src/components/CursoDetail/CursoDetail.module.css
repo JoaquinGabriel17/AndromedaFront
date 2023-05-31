@@ -1,0 +1,13 @@
+.curso{
+    text-align: center;
+
+}
+
+.contain{
+    padding: 10px;
+}
+
+.contain img{
+    width: 50%;
+    height: 50%;
+}
