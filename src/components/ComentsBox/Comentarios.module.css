@@ -9,8 +9,9 @@
     gap: 20px;
 }
 .comentario{
-    border: 1px solid black;
-    width: 300px;
+    border: 1px solid rgba(129, 129, 129, 0.753);
+    /* width: 300px; */
+    padding: 5px;
     border-radius: 5px;
     margin: 10px 0;
 }
@@ -29,6 +30,10 @@
 }
 .comenInput{
     margin: 5px 0;
+}
+
+.comentarioLabel{
+
 }
 
 .form {

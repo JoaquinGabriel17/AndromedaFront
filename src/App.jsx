@@ -12,12 +12,15 @@ function App() {
   // const [count, setCount] = useState(0)
   const [ log, setLog ] = useState(false)
   const navigate = useNavigate()
+  let carrito =   localStorage.getItem("carrito")
+  if(!carrito) localStorage.setItem("carrito", "[]")
+  
 
   
   
   return (
     <div>
-      <NavBar log={log} setLog={setLog} ></NavBar>
+      {/* <NavBar log={log} setLog={setLog} ></NavBar> */}
       <div className='principal' >
         {
           localStorage.getItem("token") === false ?

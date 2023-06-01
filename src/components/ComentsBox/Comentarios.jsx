@@ -3,7 +3,7 @@ import style from './Comentarios.module.css'
 
 export default function Comentarios(){
 
-    const {contain, comentario, caja, comenInput, form, input, inputBorder} = style
+    const {contain, comentario, caja, comenInput, form, input, comentarioLabel, inputBorder} = style
     const [ comentary, setComentary ] = useState("")
     const [ comentarios, setComentarios ] = useState([])
     // const comentarios = []
@@ -40,10 +40,12 @@ export default function Comentarios(){
                         // <p>{comen}</p>
                         // console.log(comen)
                         return(
-                            <label>{localStorage.getItem("user")}: <p className={comentario} >{comen}</p></label>
+                            <label className={comentarioLabel} >{localStorage.getItem("user")}: <p className={comentario} >{comen}</p></label>
                         )
                     })
-                    : ""
+                    : (
+                        <p>No hay ningun comentario, se el primero en comentar!</p>
+                    )
                 }
             </div>
             {/* </div> */}

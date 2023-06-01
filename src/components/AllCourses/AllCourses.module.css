@@ -5,6 +5,8 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
+    /* height: 1000px; */
+    margin-top: 100px;
     
 }
 .principal{
@@ -12,6 +14,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* margin: 100px 0; */
+    height: 1200px;
 }
 
 .back{

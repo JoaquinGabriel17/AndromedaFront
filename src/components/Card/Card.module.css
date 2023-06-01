@@ -2,7 +2,7 @@
     background-color: #4ab2ff;
     /* color: #2e475d; */
     height: 270px;
-    cursor: pointer;
+    /* cursor: pointer; */
     width: 220px;
     border-radius: 5px;
     position:relative;
@@ -10,6 +10,13 @@
     text-align: center;
     transition: .7s;
     
+}
+.card h3{
+    margin: 2px 0;
+}
+.cardButton{
+    display: flex;
+    flex-direction: row;
 }
 
 .card:hover{
@@ -27,6 +34,7 @@
 
 .card:hover .showDescription{
     display: block;
+    margin: 2px 0;
 }
 
 .cardImage{

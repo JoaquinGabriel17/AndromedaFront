@@ -31,11 +31,11 @@ export default function Carrousel(){
             {
                 cursos.map((curso) => {
                     return(
-                        <>
+                        <div key={curso.id} >
                         
                         <Card key={curso.id} id={curso.id} name={curso.name} image={curso.image} description={curso.description} autor={curso.autor} ></Card>
                         
-                        </>
+                        </div>
                     )
                 })
                 

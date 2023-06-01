@@ -3,14 +3,16 @@ import style from './NavBar.module.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function NavBar({ log, setLog }){
+
     
     const navigate = useNavigate()
+    const path = window.location.pathname
     const {navbar, buttonContain, buttonNav, input, form, inputBorder } = style
     // const [ log , setLog ] = useState(false)
     // setLog(true)
 
     return(
-        <div>
+        <div style={path === '/login' || path === '/register' ? {display: "none"} :{}} >
             <nav className={navbar}>
 
                 <h1>Andromeda</h1>
@@ -24,6 +26,7 @@ export default function NavBar({ log, setLog }){
                 <div className={buttonContain}>
                     { localStorage.getItem("token") === "true" ?
                     (   <> 
+                        <button className={buttonNav} onClick={() => navigate('/carrito')} >Carrito</button>
                         <button className={buttonNav} >Sobre Andromeda</button>
                         <button className={buttonNav} onClick={() => {
                             localStorage.setItem("token", false)

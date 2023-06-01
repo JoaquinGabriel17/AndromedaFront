@@ -1,0 +1,21 @@
+.contain{
+    text-align: center;
+    padding: 20px;
+}
+.back{
+    position: absolute;
+    top: 55px;
+    left: 10px;
+}
+.productos{
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    border: 3px solid black;
+}
+.product{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
