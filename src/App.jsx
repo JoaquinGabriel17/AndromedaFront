@@ -6,6 +6,8 @@ import NavBar from './components/NavBar/NavBar'
 import Carrousel from './components/Carrousel/Carrousel'
 import { useNavigate } from 'react-router-dom'
 import Comentarios from './components/ComentsBox/Comentarios'
+import ChatGPT from './components/ChatGPT/ChatGPT'
+import Welcome from './components/Welcome/Welcome'
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
   
   return (
     <div>
+      <Welcome></Welcome>
       {/* <NavBar log={log} setLog={setLog} ></NavBar> */}
       <div className='principal' >
         {
@@ -42,6 +45,7 @@ function App() {
       <div className='divisor' >
       </div>
       <Comentarios></Comentarios>
+      <ChatGPT></ChatGPT>
     </div>
   )
 }

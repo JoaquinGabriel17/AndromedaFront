@@ -10,12 +10,35 @@
 }
 .comentario{
     border: 1px solid rgba(129, 129, 129, 0.753);
-    /* width: 300px; */
+    max-width: 340px;
     padding: 5px;
     border-radius: 5px;
+
     margin: 10px 0;
 }
-
+.buttonImg{
+    width: 20px;
+    height: 20px;
+}
+.comentarioButton{
+    width: 0px;
+    height: 0px;
+    border: 0;
+}
+.comentarioContain{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+.comentarioButton:hover{
+    background-color: white;
+}
+.liko{
+    width: 20px;
+    height: 20px;
+    background: url('../../assets/corazon.png');
+}
 .caja{
     display: flex;
     flex-direction: column;

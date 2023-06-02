@@ -1,0 +1,12 @@
+.contain{
+    text-align: center;
+    height: 300px;
+}
+
+.loginDirect{
+    cursor: pointer;
+    color: blue;
+}
+.loginDirect:hover{
+    text-decoration: underline;
+}

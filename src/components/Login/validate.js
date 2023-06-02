@@ -1,8 +1,11 @@
+import data from '../../assets/cursos.json'
+
 export default function validate({name, password}){
-    const users = [{ name: "joaa", password: "asdasd" } ]
+    const users = data.users
     let error = {
         name: "",
-        password: ""
+        password: "",
+        role: ""
     }
     let ver = users.find((user) => user.name === name)
     // console.log(ver)
@@ -17,10 +20,11 @@ export default function validate({name, password}){
         default:
             error.name = ""
             error.password = ""
+            localStorage.setItem("role", ver.role)
             break;
     }
     
-    console.log(error)
+    // console.log(error)
 
 
     return error

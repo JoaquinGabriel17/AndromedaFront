@@ -1,6 +1,19 @@
 
 {
-    "cursos":[
+    
+  "users":[
+    {
+      "name": "joaa",
+      "password": "asdasd",
+      "role": "profesor"
+    },
+    {
+      "name": "denji",
+      "password": "asdasd",
+      "role": "estudiante"
+    }
+  ],
+  "cursos":[
     {
       "name": "Python",
       "id": 1,

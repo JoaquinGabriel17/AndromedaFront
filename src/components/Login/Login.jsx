@@ -13,7 +13,8 @@ export default function Login(){
     })
     const [ error, setError ] = useState({
         name: "",
-        password: ""
+        password: "",
+        // role: ""
     })
 
     
@@ -37,12 +38,13 @@ export default function Login(){
              })
              return
         }
-        console.log(form)
+        // console.log(form)
         const add = validate(form)
         setError(validate(form))
             if(add.name === "" && add.password === "") {
-                localStorage.setItem("token", true)
+                
                 localStorage.setItem("user", form.name)
+                
                 navigate('/')
                 setForm({name: "", password: ""})
             }

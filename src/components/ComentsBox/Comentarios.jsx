@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import style from './Comentarios.module.css'
+import like from '../../assets/corazon.png'
+import dislike from '../../assets/me-gusta.png'
+
 
 export default function Comentarios(){
 
-    const {contain, comentario, caja, comenInput, form, input, comentarioLabel, inputBorder} = style
+    const {contain, comentario, caja, comenInput, form, input, comentarioLabel, inputBorder, comentarioContain, comentarioButton, buttonImg, liko} = style
     const [ comentary, setComentary ] = useState("")
     const [ comentarios, setComentarios ] = useState([])
+    const [ ilike, setIlike ] = useState(false)
     // const comentarios = []
     // comentarios.push('ahora que pasa loco')
 
@@ -14,9 +18,14 @@ export default function Comentarios(){
     }
     function comenSubmit(){
         if(comentary === "") return alert("Tu comentario no puede estar vacío")
-        setComentarios([ comentary, ...comentarios])
+        if(localStorage.getItem("role") === "") return alert("Debes registrarte para comentar") 
+        setComentarios([...comentarios, comentary])
         setComentary("")
         // console.log(comentarios)
+    }
+    function handlerLike(e){
+            if(e.target.src === 'http://localhost:5173'+like) e.target.src = dislike
+            else e.target.src = like
     }
 
     return(
@@ -36,11 +45,15 @@ export default function Comentarios(){
             <div className={caja} >
                 {
                     
-                    comentarios.length ? comentarios.map((comen) => {
+                    comentarios.length ? comentarios.map((comen, index) => {
                         // <p>{comen}</p>
                         // console.log(comen)
                         return(
-                            <label className={comentarioLabel} >{localStorage.getItem("user")}: <p className={comentario} >{comen}</p></label>
+                            <div className={comentarioContain} >
+                                <label className={comentarioLabel} >{localStorage.getItem("user")}: <p className={comentario} >{comen}</p></label>
+                                <button className={comentarioButton} id={index} onClick={handlerLike} > <img className={buttonImg} id={index + "img"} src={dislike} alt={like} ></img>  </button>
+                                {/* <button className={liko} ></button> */}
+                            </div>
                         )
                     })
                     : (

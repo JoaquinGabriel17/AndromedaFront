@@ -38,7 +38,7 @@ export default function Card({ name, image, description, autor, id }){
             <div className={cardButton} >
             { est ? <button onClick={change} >comprar</button> : <button onClick={change} >eliminar</button>}
             <button onClick={() => {
-            if(localStorage.getItem("token") === "true") return navigate(`/cursos/${id}`)
+            if(localStorage.getItem("role")) return navigate(`/cursos/${id}`)
             else return navigate('/login')
             }} >info</button>
             </div>

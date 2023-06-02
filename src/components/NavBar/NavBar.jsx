@@ -24,16 +24,16 @@ export default function NavBar({ log, setLog }){
                 </div>
 
                 <div className={buttonContain}>
-                    { localStorage.getItem("token") === "true" ?
+                    { localStorage.getItem("role")?
                     (   <> 
                         <button className={buttonNav} onClick={() => navigate('/carrito')} >Carrito</button>
                         <button className={buttonNav} >Sobre Andromeda</button>
                         <button className={buttonNav} onClick={() => {
-                            localStorage.setItem("token", false)
+                            localStorage.setItem("role", "")
                             localStorage.setItem("user", "")
                             navigate('/login')
                             }} >Log out</button>
-                        <button className={buttonNav} onClick={() => {navigate('/perfil')}} >Perfil</button>
+                        <button className={buttonNav} onClick={() => localStorage.getItem("role") ? navigate("/perfil") : alert("Debes iniciar sesion para acceder a tu cuenta")} >Mi cuenta</button>
                         </>
                     )
                     :

@@ -1,12 +1,44 @@
 .contain{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    flex-direction: row;
+    align-items:start;
+    justify-content: space-around;
+    padding: 60px 0px;
+    
 }
 .back{
     /* float: left; */
-    left: 0;
-    margin-right: 80%;
+    position: absolute;
+    left: 20px;
+    top: 60px;
+}
+.perfilPic{
+    width: 200px;
+    height: 150px;
+    /* float: left; */
+    margin: 5px;
+}
+.perfil{
+    border: 5px solid black;
+    padding: 10px;
+    width: 70%;
+    /* margin-top: 20px; */
+    text-align: start;
+}
+.menu{
+    border: 5px solid black;
+    /* padding: 10px; */
+    width: 20%;
+    /* margin-top: 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
+}
+.menuButton{
+    width: 100%;
+    /* border: 0px 0px 1px 0px; */
+    border-bottom: 1px ;
+    border-radius: 0;
 }
