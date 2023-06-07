@@ -15,7 +15,7 @@ export default function NavBar({ log, setLog }){
         <div style={path === '/login' || path === '/register' ? {display: "none"} :{}} >
             <nav className={navbar}>
 
-                <h1>Andromeda</h1>
+                <h1 onClick={() => navigate('/')} style={{cursor: "pointer"}} >Andromeda</h1>
 
                 <div className={form}>
                     <input className={input} placeholder="Busca algo..." required={false} type="text"></input>

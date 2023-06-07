@@ -18,4 +18,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    border: 1px solid black;
+}
+.disabledButton{
+    cursor:default;
+    border-color: gray;
+}
+.disabledButton:hover{
+    background-color: gray;
 }

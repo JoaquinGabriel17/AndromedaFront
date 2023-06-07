@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import style from './Card.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -15,6 +15,7 @@ export default function Card({ name, image, description, autor, id }){
     // let carrito = localStorage.getItem("")
     function change(){
         let carro = JSON.parse(localStorage.getItem("carrito"))
+        // console.log(typeof id)
         // console.log(carro, carro.includes(id))
         if(carro.includes(id)){
             deleteProd(id)
@@ -26,6 +27,10 @@ export default function Card({ name, image, description, autor, id }){
         }
         // console.log(est)
     }
+    useEffect(() => {
+        if(localStorage.getItem("carrito").includes(id.toString())) setEst(false)
+        else setEst(true)
+    }, [])
 
 
 
@@ -36,7 +41,7 @@ export default function Card({ name, image, description, autor, id }){
             <h2 style={{ margin: "0"}} >{name}</h2>
             <h3>{autor}</h3>
             <div className={cardButton} >
-            { est ? <button onClick={change} >comprar</button> : <button onClick={change} >eliminar</button>}
+            { est ? <button onClick={change} >Agregar</button> : <button onClick={change} >Eliminar</button>}
             <button onClick={() => {
             if(localStorage.getItem("role")) return navigate(`/cursos/${id}`)
             else return navigate('/login')

@@ -1,7 +1,7 @@
 
 let carrito = localStorage.getItem("carrito")
-if(carrito) carrito = JSON.parse(carrito)
-else localStorage.setItem("carrito", "[]")
+// if(carrito) carrito = JSON.parse(carrito)
+// else localStorage.setItem("carrito", "[]")
 const initialState = carrito
 
 

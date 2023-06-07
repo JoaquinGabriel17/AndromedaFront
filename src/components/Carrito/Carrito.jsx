@@ -3,33 +3,52 @@ import style from './Carrito.module.css'
 import data from '../../assets/cursos.json'
 import { deleteProd } from '../../redux/actions'
 import { useEffect, useState } from "react"
+import axios from 'axios'
 
 export default function Carrito(){
 
-    const { contain, product, productos, back } = style
+    const { contain, product, productos, back, disabledButton } = style
     const { cursos } = data
     const [ prod, setProd ] = useState([])
     const select = []
     let totalPrice = 0
     let b = 0
-
-    
-     let carrito = localStorage.getItem("carrito")
-     if(carrito) carrito = JSON.parse(carrito)
-
+    //  localStorage.setItem("carrito","[]")
+    let carrito = localStorage.getItem("carrito")
+    if(carrito) carrito = JSON.parse(carrito)
     carrito.forEach((id) => {
         const curso = cursos.find((curs) => Number(curs.id) === Number(id))
         select.push(curso)
     })
+
+    
     useEffect(() => {
-        setProd([...select])
+        
+        
+
+
+        setProd([...prod, ...select])
+        // async function getToken(){
+        //     await axios('https://api.gocoin.com/api/v1/oauth/token',{
+        //         method: 'GET',
+
+        //     })
+        // }
+        
     },[])
     const navigate = useNavigate()
 
     function deleteHandler(e){
         prod.splice(e.target.id, 1)
         setProd([...prod])
-        localStorage.setItem("carrito", JSON.stringify(prod))
+        // console.log(carrito)
+        carrito.splice(e.target.id, 1)
+        // console.log(carrito)
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+    }
+    function paiHandler(){
+        if(prod.length === 0) return  
+        return alert("Nuestra pasarela de pagos esta deshabilitada por cuestiones monetarias intentelo mas tarde")  
     }
     return(
         <div className={contain} >
@@ -52,6 +71,7 @@ export default function Carrito(){
                 }
             </div>
             <h2>Total $: {totalPrice}</h2>
+            <button className={ prod.length ? '' : disabledButton } onClick={paiHandler} >Pagar</button>
         </div>
     )
 }

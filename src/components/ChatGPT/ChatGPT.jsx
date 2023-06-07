@@ -31,7 +31,7 @@ export default function ChatGPT(){
         }, {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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',
+            'Authorization': 'Bearer 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',
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36'
           }
         });

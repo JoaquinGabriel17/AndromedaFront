@@ -45,7 +45,8 @@ function App() {
       <div className='divisor' >
       </div>
       <Comentarios></Comentarios>
-      <ChatGPT></ChatGPT>
+      <h1>chatgpt no esta aqui</h1>
+      {/* <ChatGPT></ChatGPT> */}
     </div>
   )
 }

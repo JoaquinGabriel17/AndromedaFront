@@ -69,13 +69,13 @@ export default function Login(){
     <label className={label}>Nombre</label>
     <input  name="name" id="name" className={input} type="text" value={form.name} onChange={formHandler} />
     
-    <div></div></div>
+    </div>
 
     <div className={inputGroup}>
     <label className={label}>Contraseña</label>
     <input  name="password" id="password" value={form.password} className={input} type="password" onChange={formHandler} />
     { error.password ? <p style={{color: "red"}} >{error.password}</p> : ""}
-    <div></div></div>
+    </div>
 
             </form>
             <button onClick={loginHandler}  >Iniciar sesión</button>
